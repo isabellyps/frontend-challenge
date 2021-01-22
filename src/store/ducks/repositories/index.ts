@@ -1,5 +1,6 @@
-import { Reducer } from "redux";
-import { RepositoriesState, RepositoriesTypes } from "./types";
+/* eslint-disable import/extensions */
+import { Reducer } from 'redux';
+import { RepositoriesState, RepositoriesTypes } from './types';
 
 const INITIAL_STATE: RepositoriesState = {
   data: [],
@@ -7,7 +8,7 @@ const INITIAL_STATE: RepositoriesState = {
   loading: false,
 };
 
-const reducer:Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
+const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case RepositoriesTypes.LOAD_REQUEST:
       return { ...state, loading: true };
@@ -19,9 +20,14 @@ const reducer:Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
         data: action.payload.data,
       };
     case RepositoriesTypes.LOAD_FAILURE:
-      return { ...state, loading: false, error: true, data: [] };
+      return {
+        ...state,
+        loading: false,
+        error: true,
+        data: [],
+      };
     default:
-      state;
+      return state;
   }
 };
 

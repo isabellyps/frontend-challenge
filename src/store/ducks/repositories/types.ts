@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /**
  * Action types
 */
@@ -9,21 +10,21 @@ export enum RepositoriesTypes {
 
 export interface Repository {
     name: string,
-    topLevelDomain: [],
+    topLevelDomain: [string],
     alpha2Code: string,
     alpha3Code: string,
-    callingCodes: [],
+    callingCodes: [string],
     capital: string,
-    altSpellings: [],
+    altSpellings: [string, string],
     region: string,
     subregion: string,
     population: number,
-    latlng: [],
+    latlng: [number, number],
     demonym: string,
     area: number,
     gini: number,
-    timezones: [],
-    borders: [],
+    timezones: [string],
+    borders: [string, string, string, string, string, string],
     nativeName: string,
     numericCode: string,
     currencies: [
@@ -35,20 +36,20 @@ export interface Repository {
     ],
     languages: [
         {
-            iso639_1: string,
-            iso639_2: string,
+            'iso639_1': string,
+            'iso639_2': string,
             name: string,
             nativeName: string
         },
         {
-            iso639_1: string,
-            iso639_2: string,
+            'iso639_1': string,
+            'iso639_2': string,
             name: string,
             nativeName: string
         },
         {
-            iso639_1: string,
-            iso639_2: string,
+            'iso639_1': string,
+            'iso639_2': string,
             name: string,
             nativeName: string
         }],
@@ -77,7 +78,7 @@ export interface Repository {
     cioc: string
 }
 
-/***
+/** *
  * State type
  */
 
