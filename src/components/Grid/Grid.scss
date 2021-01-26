@@ -1,0 +1,17 @@
+.grid {
+    font-size: 15px;
+    text-align: center;
+    color: #a7a7a7;
+    &__itens {
+        justify-self: center;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 250px;
+        max-height: 250px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        @media screen and (min-width: 992px) {
+            justify-content: left;
+        }
+    } 
+}

@@ -1,12 +1,12 @@
 .form {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1440px; 
-    /* position: absolute; */
-    width: 100%;
-    height: 247px;
-    margin-top: 41px;
-    background: #4f9419;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  /* position: absolute; */
+  width: 100%;
+  height: 247px;
+  margin-top: 41px;
+  background: #4f9419;
 
   @media screen and(min-width: 768px - 1) {
     // top: 95px;
@@ -21,20 +21,17 @@
     height: 48px;
     border-radius: 7px;
     background: #ffffff;
-    width: 80%;
+    width: 85%;
     max-width: 303px;
     border-radius: 7px;
     border-color: transparent;
-    
+
     @media screen and(min-width: 768px - 1) {
-        top: 126px;
-        left: 73px;
+      top: 126px;
+      left: 73px;
       //margin: 126px 72px 73px 34px;
       width: 100%;
-      }
-
-
-     
+    }
   }
   &__place {
     position: absolute;
@@ -45,34 +42,45 @@
     background: #ffffff;
     border-radius: 7px;
     border-color: transparent;
-    width: 80%;
-@media screen and (min-width: 768px - 1) {
-   // margin: 409px 72px 73px 28px;
-    width: 100%;
-}
-
-
+    width: 85%;
+    @media screen and (min-width: 768px - 1) {
+      width: 45%;
+      top: 126px;
+      left: 395px;
+    }
   }
 
   &__date {
     top: 215px;
     left: 25px;
 
-      position: absolute;
-    width: 160px;
+    position: absolute;
+    width: 45%;
     height: 48px;
     background: #ffffff;
     border-radius: 7px;
     border-color: transparent;
-   
+    max-width: 238px;
+    @media screen and (min-width: 768px - 1) {
+      top: 215px;
+      left: 105px;
+      width: 100%;
+    }
   }
-   &__btn {
+  &__btn {
     top: 215px;
     left: 195px;
     position: absolute;
     width: 104px;
-      height: 49px;
-      background: #006c18;
-      border-radius: 7px;
-    }
+    height: 49px;
+    background: #006c18;
+    border-radius: 7px;
+@media screen and (min-width: 768px - 1) {
+  top: 215px;
+  left: 510px;
+}
+   
+
+
+  }
 }

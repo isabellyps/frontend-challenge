@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 
 import Header from './components/Header/Header';
 import Form from './components/Form/Form';
+import Grid from './components/Grid/Grid';
 // import RepositoryList from './components/RepositoryList';
-
 import store from './store';
 
 const App:React.FC = () => (
@@ -15,6 +15,7 @@ const App:React.FC = () => (
     {/* <RepositoryList /> */}
     <Header />
     <Form />
+    <Grid />
   </Provider>
 );
 

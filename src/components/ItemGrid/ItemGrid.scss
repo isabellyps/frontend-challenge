@@ -1,0 +1,49 @@
+.grid {
+  &__box {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    @media screen and (min-width: 992px) {
+      width: 25%;
+    }
+    &--main {
+      border-top: 1px solid #ababab;
+      p {
+        text-align: justify;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+      }
+    }
+    &__image {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      margin: 0;
+      width: 56px;
+      height: 34px;
+      & img {
+        width: 100%;
+      }
+    }
+    &__country {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: #4f9419;
+      padding-top: 16px;
+      margin: 0;
+    }
+    & svg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #868686;
+      font-size: 14px;
+    }
+  }
+}
