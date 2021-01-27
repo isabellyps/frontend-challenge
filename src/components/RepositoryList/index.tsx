@@ -10,6 +10,7 @@ import { ApplicationState } from '../../store';
 import * as RepositoriesActions from '../../store/ducks/repositories/actions';
 
 import RepositoryItem from '../RepositoryItem';
+import ItemGrid from '../ItemGrid/ItemGrid';
 
 interface StateProps {
   repositories: Repository[];
@@ -36,7 +37,7 @@ class RepositoryList extends Component<Props> {
     return (
       <ul>
         {repositories.map((repository) => (
-          <RepositoryItem key={repository.name} repository={repository} />
+          <ItemGrid key={repository.name} repository={repository} />
         ))}
       </ul>
     );
