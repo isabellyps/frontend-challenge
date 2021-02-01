@@ -1,14 +1,38 @@
 .grid {
+  font-size: 15px;
+  text-align: center;
+  color: #a7a7a7;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  background: #ffffff;
+  //     @media screen and (min-width: 992px) {
+  //         justify-content: left;
+  //     // }
+  // }
   &__box {
-    position: relative;
+    // position: relative;
     text-align: center;
-    width: 100%;
-    padding: 5px;
-    @media screen and (min-width: 992px) {
-      width: 25%;
+    width: 250px;
+    height: 250px;
+    left: 36px;
+    bottom: 490px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin: 19px;
+    // padding: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    // @media screen and (min-width: 992px) {
+    //   width: 25%;
+    // }
+    &--header {
+      height: 104px;
     }
     &--main {
       border-top: 1px solid #ababab;
+      padding: 43px 0 0px 26px;
+      height: 146px;
       p {
         text-align: justify;
         font-style: normal;
@@ -16,29 +40,33 @@
         font-size: 16px;
         line-height: 19px;
         color: #000000;
+        margin: 0;
+        padding-bottom: 11px;
       }
     }
     & svg {
       display: flex;
+      float: right;
       justify-content: center;
       align-items: center;
       color: #868686;
       font-size: 14px;
-    }
+      width: 30px;
+    margin: 20px 15px 20px 15px;
   }
-  &__image {
-    overflow: hidden;
+}
+&__image {
+  overflow: hidden;
+  display: inline-grid;
+  width: 56px;
+  height: 34px;
+  top: 79px;
+}
+  & img {
     width: 100%;
-    position: relative;
-    margin: 0;
-    width: 56px;
-    height: 34px;
-    & img {
-      width: 100%;
-    }
-    & svg {
-        width: 100%;
-    }
+  }
+  & svg {
+    width: 100%;
   }
   &__country {
     font-style: normal;
@@ -46,7 +74,10 @@
     font-size: 16px;
     line-height: 19px;
     color: #4f9419;
-    padding-top: 16px;
-    margin: 0;
+    text-align: justify;
+    // padding-top: 16px;
+    text-transform: capitalize;
+    margin-left: 14px;
+    margin-bottom: px;
   }
 }

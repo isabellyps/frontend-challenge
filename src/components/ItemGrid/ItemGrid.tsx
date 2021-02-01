@@ -6,30 +6,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import { faPen, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Repository } from '../../store/ducks/repositories/types';
 
 import './ItemGrid.scss';
 
-interface OwnProps {
-  repository: Repository;
+export interface DataInput {
+  countrySelect: string,
+  placeSelect: string,
+  dateSelect: string,
+  flagSelect: string,
 }
 
-export default function ItemGrid({ repository }: OwnProps) {
+export default function ItemGrid(item:DataInput) {
   return (
-    <div className="grid__box">
+    <div className="grid__box" key={item.countrySelect}>
       <div className="grid__box--header">
         <figure className="grid__image">
-          <img src={repository.flag} alt="flag" />
+          <img src={item.flagSelect} alt="flag" />
         </figure>
-        <h3 className="grid__country">{repository.name}</h3>
-        {/* <div className="grid__icon"> */}
-        <FontAwesomeIcon icon={faPen} />
         <FontAwesomeIcon icon={faTimes} />
+        <FontAwesomeIcon icon={faPen} />
+        <h3 className="grid__country">{item.countrySelect}</h3>
+        {/* <div className="grid__icon"> */}
+
         {/* </div> */}
       </div>
       <div className="grid__box--main">
-        <p>Local: local.nome</p>
-        <p>Meta: local.meta</p>
+        <p>
+          Local:
+          {item.placeSelect}
+        </p>
+        <p>
+          Meta:
+          {item.dateSelect}
+        </p>
       </div>
     </div>
   );

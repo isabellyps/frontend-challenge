@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
 import React, { Component } from 'react';
@@ -8,46 +10,60 @@ import { Repository } from '../../store/ducks/repositories/types';
 import { ApplicationState } from '../../store';
 import * as RepositoriesActions from '../../store/ducks/repositories/actions';
 
-import ItemGrid from '../ItemGrid/ItemGrid';
+import ItemGrid, { DataInput } from '../ItemGrid/ItemGrid';
 
 import './Grid.scss';
-
-interface StateProps {
-  repositories: Repository[];
-}
 
 interface DispatchProps {
   loadRequest(): void;
 }
 
-type Props = StateProps & DispatchProps;
+export default function Grid() {
+  return (
+    <section className="grid">
+      <div className="grid__itens">
+        {/* <ItemGrid key={item.countrySelect} flagSelect={item.flagSelect} countrySelect={item.countrySelect} placeSelect={item.placeSelect} dateSelect={item.dateSelect} /> */}
+      </div>
+    </section>
+  );
+};
 
-class Grid extends Component<Props> {
-  componentDidMount() {
-    const { loadRequest } = this.props;
+// interface StateProps {
+//   repositories: Repository[];
+// }
 
-    loadRequest();
-  }
+// interface DispatchProps {
+//   loadRequest(): void;
+// }
 
-  render() {
-    const { repositories } = this.props;
+// type Props = StateProps & DispatchProps;
 
-    return (
-      <section className="grid">
-        <div className="grid__itens">
-          {repositories.map((repository) => (
-            <ItemGrid key={repository.name} repository={repository} />
-          ))}
-        </div>
-      </section>
-    );
-  }
-}
+// class Grid extends Component<Props> {
+//   componentDidMount() {
+//     const { loadRequest } = this.props;
 
-const mapStateToProps = (state: ApplicationState) => ({
-  repositories: state.repositories.data,
-});
+//     loadRequest();
+//   }
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(RepositoriesActions, dispatch);
+//   render() {
+//     const { repositories } = this.props;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Grid);
+//     return (
+//       <section className="grid">
+//         <div className="grid__itens">
+//           {repositories.map((repository) => (
+//             <ItemGrid key={repository.name} repository={repository} />
+//           ))}
+//         </div>
+//       </section>
+//     );
+//   }
+// }
+
+// const mapStateToProps = (state: ApplicationState) => ({
+//   repositories: state.repositories.data,
+// });
+
+// const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(RepositoriesActions, dispatch);
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Grid);
