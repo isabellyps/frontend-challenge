@@ -4,7 +4,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React from 'react';
 
 import { faPen, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,11 +19,11 @@ export interface DataInput {
 }
 
 export default function ItemGrid(item:DataInput) {
-  const [list, setList] = useState(item);
+  // const [list, setList] = useState(item);
 
-  const deletePlace = () => {
-    item.deleteSelect();
-  };
+  // const deletePlace = () => {
+  //   item.deleteSelect();
+  // };
 
   const editPlace = () => {
     console.log('editPlace');

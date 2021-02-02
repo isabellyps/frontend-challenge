@@ -11,6 +11,16 @@
   @media screen and(min-width: 768px + 1) {
     padding-top: 82px;
   }
+  & label {
+    display: inline-grid;
+    margin-right: 34px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    height: 70px;
+  }
   &__country {
     height: 48px;
     border-radius: 7px;
@@ -18,7 +28,7 @@
     max-width: 303px;
     border-radius: 7px;
     border-color: transparent;
-    margin-right: 34px;
+    // margin-right: 34px;
     width: 80%;
     outline: none;
     @media screen and(min-width: 768px + 1) {
@@ -53,15 +63,27 @@
     }
   }
   &__btn {
+    display: inline-grid;
     max-width: 104px;
     height: 49px;
     background: #006c18;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+    text-align: center;
+    align-content: center;
     border-radius: 7px;
     width: 80%;
     border-color: transparent;
     outline: none;
+    margin-top: 19px;
     @media screen and(min-width: 768px + 1) {
       width: 100%;
+    }
+    :hover {
+      color: #fff;
     }
   }
 }

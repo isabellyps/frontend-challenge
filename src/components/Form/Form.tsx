@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -8,6 +9,7 @@ import React, {
 } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
+import InputMask from 'react-input-mask';
 
 import { Repository } from '../../store/ducks/repositories/types';
 import { ApplicationState } from '../../store';
@@ -107,39 +109,48 @@ const Form:React.FC<Props> = ({
   return (
     <>
       <div className="form">
-        País
-        <select className="form__country" name="country" id="country" value={country} aria-label="País" onChange={(event) => handleSetCountry(event)}>
-          <option value="" key=""> </option>
-          {repositories.map((item) => (
-            <option value={item.translations.br} key={item.name}>
-              {item.translations.br}
-            </option>
-          ))}
-        </select>
+        {/* <form> */}
+        <label htmlFor="country">
+          País
+          <select className="form__country" name="country" id="country" value={country} aria-label="País" onChange={(event) => handleSetCountry(event)}>
+            <option value="" key=""> </option>
+            {repositories.map((item) => (
+              <option value={item.translations.br} key={item.name}>
+                {item.translations.br}
+              </option>
+            ))}
+          </select>
+        </label>
 
         {/* </label>
           <label> */}
-        Local
-        <input
-          className="form__place"
-          type="text"
-          id="place"
-          value={place}
-          onChange={(event) => handleSetPlace(event)}
-        />
+        <label htmlFor="place">
+          Local
+          <input
+            className="form__place"
+            type="text"
+            id="place"
+            value={place}
+            onChange={(event) => handleSetPlace(event)}
+          />
+        </label>
+
         {/* </label>
           <label> */}
-        Meta
-        <input
-          className="form__date"
-          type="date"
-          id="date"
-          aria-label="Meta"
-          onChange={(event) => handleSetDate(event)}
-          value={date}
-        />
+        <label htmlFor="date">
+          Meta
+          <input
+         // mask="MM/AAAA"
+            type="date"
+            className="form__date"
+            onChange={(event) => handleSetDate(event)}
+            value={date}
+          />
+        </label>
+
         {/* </label> */}
         <button className="form__btn" type="submit" onClick={(event) => handleAddPlace(event)}>Adicionar</button>
+        {/* </form> */}
 
       </div>
       <section className="grid">
