@@ -60,8 +60,13 @@ const Form:React.FC<Props> = ({
     setDate(value);
   };
 
+  const teste = (indexArray:any) => {
+    console.log(indexArray);
+    const newListSelect = listSelect.splice(indexArray, 1);
+    console.log(newListSelect);
+  };
+
   const handleAddPlace = (event:any) => {
-    event.preventDefault();
     const countrySelect = repositories.filter((item) => item.name === country);
     console.log(event);
     // const dateSelect = date;
@@ -72,6 +77,11 @@ const Form:React.FC<Props> = ({
       placeSelect: place,
       dateSelect: date,
       flagSelect: '',
+      deleteSelect: () => {
+        const nextIndiceArray = listSelect.length - 1;
+        const newArray = listSelect.splice(nextIndiceArray, 1);
+        setListSelect(newArray);
+      },
     };
 
     console.log('item', item);
@@ -80,24 +90,29 @@ const Form:React.FC<Props> = ({
     console.log('listSelect', listSelect);
     console.log('place', place);
     console.log('date', date);
+    event.preventDefault();
+    setCountry('');
+    setPlace('');
+    setDate('');
 
     // console.log(country);
     // console.log(date);
     //   <ItemGrid key={place} repository={country} />;
   };
 
+  const onSubmit = (e:any) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <div className="form">
-        {/* <form onSubmit={(event) => handleAddPlace(event)}>
-
-          <label> */}
         País
         <select className="form__country" name="country" id="country" value={country} aria-label="País" onChange={(event) => handleSetCountry(event)}>
           <option value="" key=""> </option>
           {repositories.map((item) => (
-            <option value={item.name} key={item.name}>
-              {item.name}
+            <option value={item.translations.br} key={item.name}>
+              {item.translations.br}
             </option>
           ))}
         </select>
@@ -125,12 +140,13 @@ const Form:React.FC<Props> = ({
         />
         {/* </label> */}
         <button className="form__btn" type="submit" onClick={(event) => handleAddPlace(event)}>Adicionar</button>
-        {/* </form> */}
+
       </div>
       <section className="grid">
 
-        {listSelect.map((itemList) => (
-          <ItemGrid key={itemList.placeSelect} flagSelect={itemList.flagSelect} countrySelect={itemList.countrySelect} placeSelect={itemList.placeSelect} dateSelect={itemList.dateSelect} />
+        {listSelect.map((itemList, indice) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <ItemGrid deleteSelect={itemList.deleteSelect} key={indice} flagSelect={itemList.flagSelect} countrySelect={itemList.countrySelect} placeSelect={itemList.placeSelect} dateSelect={itemList.dateSelect} />
         ))}
 
       </section>
