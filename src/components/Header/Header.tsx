@@ -3,7 +3,7 @@ import React from 'react';
 
 import './Header.scss';
 
-const Header:React.FC = () => (
+const Header: React.FC = () => (
   <header className="topbar">
     <div className="topbar__container">
       <a href="/" className="topbar__logo">

@@ -23,7 +23,11 @@ module.exports = {
   },
   plugins: ['react', 'import', 'jsx-a11y'],
   rules: {
-    'no-use-before-define': ['error', { variables: false }],
+    'no-use-before-define': 'off',
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-use-before-define': ['error', { variables: false }],
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    'linebreak-style': ['error', 'windows'],
     'react/jsx-filename-extension': [
       'error',
       {
@@ -32,8 +36,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    'linebreak-style': ['error', 'windows'],
+
     'import/extensions': [
       'error',
       'ignorePackages',

@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import { createStore, applyMiddleware, Store } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { RepositoriesState } from './ducks/repositories/types';

@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable array-callback-return */
-/* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faPen, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,17 +11,11 @@ export interface DataInput {
   countrySelect: string,
   placeSelect: string,
   dateSelect: string,
-  flagSelect: string,
+  flagSelect: any,
   deleteSelect(): void
 }
 
 export default function ItemGrid(item:DataInput) {
-  // const [list, setList] = useState(item);
-
-  // const deletePlace = () => {
-  //   item.deleteSelect();
-  // };
-
   const editPlace = () => {
     console.log('editPlace');
   };
@@ -52,22 +43,4 @@ export default function ItemGrid(item:DataInput) {
       </div>
     </div>
   );
-  // <>
-  //   <div className="grid__box">
-  //     <div className="grid__box--header">
-  //       <figure className="grid__image">
-  //         <img src={repository.flag} alt="flag" />
-  //       </figure>
-  //       <h3 className="grid__country">{repository.name}</h3>
-  //       {/* <div className="grid__icon"> */}
-  //       <FontAwesomeIcon icon={faPen} />
-  //       <FontAwesomeIcon icon={faTimes} />
-  //       {/* </div> */}
-  //     </div>
-  //     <div className="grid__box--main">
-  //       <p>Local: local.nome</p>
-  //       <p>Meta: local.meta</p>
-  //     </div>
-  //   </div>
-  // </>;
 }
